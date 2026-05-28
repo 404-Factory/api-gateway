@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+
+        - id: recipe-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/recipe/**
+
+        - id: anomaly-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/anomalies/**
+
+        - id: notification-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/notification/**
+
+        - id: chatbot-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/chatbot/**
+
+        - id: management-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/equipments/**
