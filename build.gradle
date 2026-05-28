@@ -6,20 +6,15 @@ plugins {
 version = "1.0.0"
 
 dependencies {
-	// common modules
-	implementation "com.factory.common:contract:1.0.1"
 
-	// Spring Web
-	implementation "org.springframework.boot:spring-boot-starter-web"
-
-	// Spring Data JPA
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// Spring Cloud Gateway
+	implementation 'org.springframework.cloud:spring-cloud-starter-gateway:4.3.0'
+    
+    // Reactive Web
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
 	// Spring Boot Actuator
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-	// MariaDB
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
 	// Lombok
 	annotationProcessor 'org.projectlombok:lombok'
