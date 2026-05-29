@@ -9,10 +9,11 @@ spring:
     gateway:
       routes:
 
-        - id: recipe-service
+        - id: reciperecommendationai-service
           uri: http://localhost:8082
           predicates:
-            - Path=/api/recipe/**
+            - Path=/api/ai/recipe/**
+            - Path=/api/internal/recipe/**
 
         - id: anomaly-service
           uri: http://localhost:8083
@@ -22,12 +23,12 @@ spring:
         - id: notification-service
           uri: http://localhost:8084
           predicates:
-            - Path=/api/notification/**
+            - Path=/api/alerts/**
 
         - id: chatbot-service
           uri: http://localhost:8085
           predicates:
-            - Path=/api/chatbot/**
+            - Path=/api/chat/**
 
         - id: management-service
           uri: http://localhost:8086
