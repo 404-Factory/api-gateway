@@ -36,3 +36,8 @@ spring:
             - Path=/api/equipments/**
           filters:
             - RewritePath=/api/equipments/(?<segment>.*), /equipments/$\{segment}
+
+        - id: summary-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/summary/**
